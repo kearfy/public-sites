@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Daaplate</title>
+
+        <link rel="stylesheet" href="app.css">
+    </head>
+    <body>
+        <div id="app">
+            <h1>
+                Daaplate.
+            </h1>
+
+            <p>
+                Translate any language into daaptaal. <br>
+                <i>Any language is supported, try below!</i>
+            </p>
+
+            <div id="textboxes">
+                <textarea :value="input" @input="translate()" placeholder="Input" cols="30" rows="10"></textarea>
+                <textarea :value="output" placeholder="Output" cols="30" rows="10" readonly></textarea>
+            </div>
+        </div>
+        <script src="app.js" type="module"></script>
+    </body>
+</html>

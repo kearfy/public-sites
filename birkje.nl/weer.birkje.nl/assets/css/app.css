@@ -1,0 +1,228 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Raleway', sans-serif;
+}
+
+html, body {
+    width: 100%;
+    height: 100vh;
+
+    background-image: url('../img/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 1s ease-in-out;
+}
+
+.background-overlay {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    z-index: 100;
+}
+
+body > .app {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 1000;
+}
+
+.weather-form {
+    width: 400px;
+    height: 500px;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+@media only screen and (max-width: 500px) {
+    .weather-form {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-height: 750px) {
+    .weather-form {
+        width: 60%;
+    }
+}
+
+.weather-form img {
+    width: 200px;
+    padding: 0px calc(50% - 100px) 25px;
+}
+
+@media only screen and (max-height: 750px) {
+    .weather-form img {
+        width: 150px;
+        padding: 0px calc(50% - 75px) 10px;
+    }
+}
+
+.weather-form .input-container {
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.16), 0 5px 20px rgba(0,0,0,0.23);
+}
+
+.weather-form .input-container .background {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    z-index: 50;
+
+    background-color: rgba(255, 255, 255, .6);
+    filter: blur(4px);
+
+    border: none;
+    padding: 50px;
+}
+
+.weather-form .input-container input {
+    padding: 0px 25px;
+    width: calc(100% - 50px);
+    height: 50px;
+    line-height: 50px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    color: black;
+}
+
+.weather-form .button-container {
+    width: 100%;
+    height: 40px;
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.weather-form .button-container button {
+    width: 120px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+
+    background-color: black;
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    position: relative;
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.16), 0 5px 20px rgba(0,0,0,0.23);
+}
+
+.weather-form .button-container button:hover::after {
+    content: '';
+    width: 100%;
+    height: 40px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, .1);
+}
+
+.weather-status {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    margin: 0px 5%;
+    width: 90%;
+    height: 350px;
+    color: white !important;
+
+    display: flex;
+    justify-content: space-between;
+    
+    opacity: 1;
+    transition: opacity 2s ease;
+}
+
+.weather-status.hide {
+    opacity: 0;
+    transition: opacity .1s ease;
+}
+
+@media only screen and (max-height: 900px) {
+    .weather-status {
+        height: 250px;
+    }
+}
+
+@media only screen and (max-height: 800px) {
+    .weather-status {
+        height: 200px;
+    }
+}
+
+.weather-status h1 {
+    font-size: 70px;
+    font-weight: 200;
+    display: flex;
+}
+
+.weather-status h1 p {
+    font-size: 20px;
+    line-height: 130px;
+    height: 82px;
+    margin-left: 15px;
+}
+
+@media only screen and (max-height: 800px) {
+    .weather-status h1 {
+        font-size: 50px;
+    }
+
+    .weather-status h1 p {
+        height: 60px;
+        line-height: 100px
+    }
+}
+
+.weather-status .left > p {
+    font-size: 25px;
+    margin-top: 20px;
+}
+
+@media only screen and (max-height: 800px) {
+    .weather-status .left > p {
+        font-size: 16px;
+    }
+}
+
+.weather-status .temp-min-max {
+    display: flex;
+    font-weight: 200;
+}
+
+.weather-status .temp-min-max p {
+    font-size: 20px;
+    margin-left: 15px;
+    line-height: 30px;
+    margin-top: 10px;
+}
+
+.weather-status .temp-min-max p b {
+    font-weight: 300 !important;
+}
